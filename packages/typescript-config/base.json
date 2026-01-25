@@ -4,9 +4,8 @@
     "declarationMap": true,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
-    "inlineSources": true,
     "isolatedModules": true,
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
     "noImplicitAny": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
@@ -15,7 +14,8 @@
     "skipLibCheck": true,
     "strict": true,
     "target": "ES2022",
-    "lib": ["ES2022"]
+    "lib": ["ES2022"],
+    "jsx": "react-jsx"
   },
   "exclude": ["node_modules"]
 }
