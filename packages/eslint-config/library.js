@@ -2,13 +2,10 @@ module.exports = {
   extends: [
     "@vercel/style-guide/eslint/node",
     "@vercel/style-guide/eslint/typescript",
-    "@vercel/style-guide/eslint/browser",
-    "@vercel/style-guide/eslint/react",
     "eslint-config-turbo",
     "eslint-config-prettier",
   ],
   rules: {
     "@typescript-eslint/no-explicit-any": "warn",
-    "eslint-plugin-only-warn": "warn",
   },
 };
