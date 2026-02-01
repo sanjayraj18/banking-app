@@ -21,7 +21,7 @@
   "devDependencies": {
     "prisma": "^7.3.0"
   },
-  "exports":{
+  "exports": {
     "./client": "./index.ts"
   }
 }

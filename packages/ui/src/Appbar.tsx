@@ -1,16 +1,22 @@
-import React from "react";
+import { Button } from "./button";
 
 interface AppbarProps {
-  children?: React.ReactNode;
-  className?: string;
+  user?: {
+    name?: string | null;
+  };
+  onSignin: any;
+  onSignout: any;
 }
 
-export const Appbar: React.FC<AppbarProps> = ({ children, className = "" }) => {
+export const Appbar = ({ user, onSignin, onSignout }: AppbarProps) => {
   return (
-    <nav
-      className={`bg-gray-800 text-white p-4 flex items-center justify-between ${className}`}
-    >
-      {children}
-    </nav>
+    <div className="flex justify-between border-b px-4">
+      <div className="text-lg flex flex-col justify-center">PayTM</div>
+      <div className="flex flex-col justify-center pt-2">
+        <Button onClick={user ? onSignout : onSignin}>
+          {user ? "Logout" : "Login"}
+        </Button>
+      </div>
+    </div>
   );
 };
