@@ -14,12 +14,11 @@ export const authOptions : NextAuthOptions = {
             },
 
             async authorize(credentials : any){
-                if (!credentials?.email || !credentials?.password) {
+                if (!credentials?.phone || !credentials?.password) {
                         throw new Error("Missing credentials");
                 }
 
-                const hashedPassword = await bcrypt.hash(credentials.password,10);
-                const existinguser = await db.user.findWhere({
+                const existinguser = await db.user.findUnique({
                     where: {
                         number : credentials.phone,
                     },
@@ -38,17 +37,19 @@ export const authOptions : NextAuthOptions = {
                 }
 
                 try{
-                    const user = await db.create({
+                    const hashedPassword = await bcrypt.hash(credentials.password,10);
+                    const user = await db.user.create({
                         data : {
                             number : credentials.phone,
-                            password : hashedPassword
+                            password : hashedPassword,
+                            email : `${credentials.phone}@paytm.local`
                         }
                     })
 
                      return {
                        id: user.id.toString(),
                        name: user.name,
-                       email: user.number,
+                       email: user.email,
                      };
                 }
                 catch(e){

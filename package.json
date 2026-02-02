@@ -12,7 +12,8 @@
     "@prisma/client": "^7.3.0",
     "@tailwindcss/postcss": "^4.1.18",
     "@types/bcrypt": "^6.0.0",
-    "autoprefixer": "^10.4.23",
+    "@types/pg": "^8.16.0",
+    "autoprefixer": "^10.4.24",
     "postcss": "^8.5.6",
     "prettier": "^3.7.4",
     "prisma": "^7.3.0",
@@ -29,7 +30,9 @@
     "packages/*"
   ],
   "dependencies": {
+    "@prisma/adapter-pg": "^7.3.0",
     "bcrypt": "^6.0.0",
-    "next-auth": "^4.24.13"
+    "next-auth": "^4.24.13",
+    "pg": "^8.18.0"
   }
 }
