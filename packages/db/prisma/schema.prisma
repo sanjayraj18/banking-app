@@ -7,6 +7,18 @@ datasource db {
   provider = "postgresql"
 }
 
+
+enum OnRampStatus {
+  Success
+  Pending
+  Failure
+}
+
+enum Auth {
+  Google
+  GitHub
+}
+
 model User {
   id        Int     @id @default(autoincrement())
   email     String  @unique
@@ -15,4 +27,28 @@ model User {
   name      String?
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
+  onRampTransactions OnRampTransaction[]
+  balance   Balance?
 }
+
+model OnRampTransaction{
+  id Int @id @default(autoincrement())
+  status OnRampStatus
+  token String @unique
+  provider String
+  amount Int
+  startTime DateTime
+  userId Int
+  user User @relation(fields:[userId],references : [id])
+}
+
+
+model Balance{
+  id Int @id @default(autoincrement())
+  userId Int @unique
+  amount Int
+  locked Int
+  user User @relation(fields:[userId], references : [id])
+}
+
+
