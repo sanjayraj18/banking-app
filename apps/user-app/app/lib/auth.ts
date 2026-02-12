@@ -5,7 +5,7 @@ import Credentials from "next-auth/providers/credentials"
 import bcrypt from "bcrypt"
 
 console.log("sanjay");
-
+console.log("snjay2222222")
 export const authOptions : NextAuthOptions = {
     providers: [
         Credentials({
@@ -63,11 +63,11 @@ export const authOptions : NextAuthOptions = {
     ],
     secret : process.env.NEXTAUTH_SECRET,
     callbacks: {
-        async session ({token, session}){
-            if(session.user && token.sub){
-                session.user.id = token.sub;
-            }
-            return session
-        }
+        // async session ({token, session}){
+        //     if(session.user && token.sub){
+        //         session.user.id = token.sub;
+        //     }
+        //     return session
+        // }
     }
 };
