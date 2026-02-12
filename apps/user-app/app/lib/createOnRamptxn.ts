@@ -28,6 +28,11 @@ export async function createOnRamptxn(amount: number, provider: string) {
     },
   });
 
+
+
+
+
+  console.log("sanjau raj will rockkkk")
   return {
     message: "onRamp transaction added",
   };
