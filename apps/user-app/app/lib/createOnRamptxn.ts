@@ -30,6 +30,7 @@ export async function createOnRamptxn(amount: number, provider: string) {
 
 
 
+  console.log("end of the beginning")
 
 
   console.log("sanjau raj will rockkkk")
