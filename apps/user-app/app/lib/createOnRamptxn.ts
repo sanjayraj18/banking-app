@@ -32,9 +32,11 @@ export async function createOnRamptxn(amount: number, provider: string) {
     },
   });
 
+  console.log("Created onRamp transaction with token:", token);
+  console.log("sanjayy1")
+  console.log("sanjauy22222")
 
   console.log("oru naal intha nilam enakku sikkum,sikkuchu nee setha")
-
 
   console.log("sanjau raj will rockkkk")
   return {
