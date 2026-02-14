@@ -39,6 +39,7 @@ export async function createOnRamptxn(amount: number, provider: string) {
   console.log("oru naal intha nilam enakku sikkum,sikkuchu nee setha")
 
   console.log("sanjau raj will rockkkk")
+  console.log("token:", token);
   return {
     message: "onRamp transaction added",
   };
