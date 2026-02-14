@@ -15,7 +15,11 @@ export async function createOnRamptxn(amount: number, provider: string) {
     };
   }
 
+
+
+  console.log("befire")
   const userId = parseInt(userIdString);
+  console.log("After")
 
   await db.onRampTransaction.create({
     data: {
@@ -28,12 +32,16 @@ export async function createOnRamptxn(amount: number, provider: string) {
     },
   });
 
+  console.log("Created onRamp transaction with token:", token);
+  console.log("sanjayy1")
+  console.log("sanjauy22222")
 
-
+  console.log("oru naal intha nilam enakku sikkum,sikkuchu nee setha")  
   console.log("end of the beginning")
 
 
   console.log("sanjau raj will rockkkk")
+  console.log("token:", token);
   return {
     message: "onRamp transaction added",
   };
